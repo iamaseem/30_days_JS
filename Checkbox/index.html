@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>checkbox</title>
+</head>
+<body>
+    <div class="inbox">
+        <div class="item">
+          <input type="checkbox">
+          <p>Hello.</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>Haha</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>Hi</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>Sup</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>LOL</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>Pheww</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>Fifa</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>LM10</p>
+        </div>
+        <div class="item">
+          <input type="checkbox">
+          <p>Forca Barca</p>
+        </div>
+      </div>
+    
+    <script>
+    const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+    
+    let lastChecked;
+    
+    function handleCheck(e) {
+      let inBetween = false;
+      if (e.shiftKey && this.checked) {
+        checkboxes.forEach(checkbox => {
+          console.log(checkbox);
+          if (checkbox === this || checkbox === lastChecked) {
+            inBetween = !inBetween;
+            console.log('Starting to check them in between!');
+          }
+    
+          if (inBetween) {
+            checkbox.checked = true;
+          }
+        });
+      }
+    
+      lastChecked = this;
+    }
+    
+    checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+    </script>
+</body>
+</html>

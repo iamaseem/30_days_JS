@@ -1,0 +1,17 @@
+{
+  "name": "19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "browser-sync start --MASTER --19 \"*.css, *.html, *.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.5 <2.23.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
